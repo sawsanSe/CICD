@@ -11,8 +11,7 @@ services:
     ports:
       - $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
     volumes:
-      - db:/var/lib/mysql
-  app:
+      - './.mysql-data/db:/var/lib/mysql'
     depends_on:
       - mysqldb
     image: sawsanselmi/tpachat
