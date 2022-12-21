@@ -11,15 +11,11 @@ services:
       - 3306:3306
     volumes:
       - './.mysql-data/db:/var/lib/mysql'
-    networks:
-      - projectdevops
   app:
     depends_on:
       - mysqldb
     image: sawsanselmi/tpachat:46
     restart: on-failure
-    networks:
-      - projectdevops
     ports:
       - 8089:8089
     environment:
