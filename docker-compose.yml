@@ -8,14 +8,18 @@ services:
       - MYSQL_ROOT_PASSWORD=$MYSQLDB_ROOT_PASSWORD
       - MYSQL_DATABASE=$MYSQLDB_DATABASE
     ports:
-      - $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
+      - 3306:3306
     volumes:
       - './.mysql-data/db:/var/lib/mysql'
+    networks:
+      - projectdevops
   app:
     depends_on:
       - mysqldb
     image: sawsanselmi/tpachat:46
     restart: on-failure
+    networks:
+      - projectdevops
     env_file: ./.env
     ports:
       - 8089:8089
