@@ -8,7 +8,7 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=1
       - MYSQL_DATABASE=alinfo
     ports:
-      - 3306:3306
+      - 3306:3309
     volumes:
       - './.mysql-data/db:/var/lib/mysql'
   app:
