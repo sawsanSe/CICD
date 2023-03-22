@@ -17,7 +17,7 @@ services:
     image: sawsanselmi/tpachat:46
     restart: on-failure
     ports:
-      - 8089:8089
+      - 8085:8089
     environment:
       SPRING_APPLICATION_JSON: '{
         "spring.datasource.url"  : "jdbc:mysql://mysqldb:3306/alinfo?useSSL=false",
