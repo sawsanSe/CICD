@@ -14,7 +14,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: sawsanselmi/tpachat
+    image: sawsanselmi/tpachat:46
     restart: on-failure
     ports:
       - 8089:8089
